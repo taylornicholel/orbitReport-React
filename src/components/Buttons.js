@@ -1,7 +1,7 @@
 import satData from "./satData";
 // Pass the props created from the App() function: filterByType, setSat, and displaySats.
 
-/* INCORRECT
+/* INCORRECT // to pass in properties, you need it in the () after the variable to get it to render in function
 import  {
   filterByType, 
   setSat, 
@@ -16,8 +16,11 @@ const Buttons = ({filterByType, setSat, displaySats}) => {
         <button onClick={() => filterByType(sat)} key={id}>
           {sat} Orbit
         </button>
-        //code continues
-        <button>All Orbits</button>
+        // code continues
+        // Inside the button tag, create an onClick function that points to setSat. Pass satData to setSat.
+        <button onClick={() => filterByType(satData)} key={setSat}>
+          All Orbits
+        </button>
       </div>
     );
   })};
