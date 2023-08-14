@@ -1,12 +1,14 @@
 import Banner from "./components/Banner";
 import Buttons from "./components/Buttons";
 import Table from "./components/Table";
-import satData from "./components/satData";
+// import satData from "./components/satData";
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './App.css';
+import { useState } from 'react';
 
 // What's the difference between from/as : "Import useState from "react". & Import satData.js as satData." ???? 
+const satData = ReactDOM.createSatData(document.getElementById('satData'));
 
 function App() {
   const [sat, setSat] = useState(satData);
