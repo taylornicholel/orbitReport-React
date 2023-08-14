@@ -1,4 +1,5 @@
 import satData from "./satData";
+import './styling.css';
 // Pass the props created from the App() function: filterByType, setSat, and displaySats.
 
 /* INCORRECT // to pass in properties, you need it in the () after the variable to get it to render in function
@@ -12,7 +13,7 @@ import  {
 const Buttons = ({filterByType, setSat, displaySats}) => {
   {displaySats.map((sat, id) => {
     return (
-      <div>
+      <div className={"flex-container"}>
         <button onClick={() => filterByType(sat)} key={id}>
           {sat} Orbit
         </button>

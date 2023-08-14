@@ -1,4 +1,5 @@
-import satData from "./satData";
+import satData from "./satData"; // why is this grayed out at 13:51 8/14? 
+import './styling.css';
 
 const Table = ({ sat }) => {
   return (
