@@ -1,14 +1,16 @@
 import Banner from "./components/Banner";
 import Buttons from "./components/Buttons";
 import Table from "./components/Table";
-// import satData from "./components/satData";
+import satData from "./components/satData";
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 import './App.css';
 import { useState } from 'react';
 
 // What's the difference between from/as : "Import useState from "react". & Import satData.js as satData." ???? 
-const satData = ReactDOM.createSatData(document.getElementById('satData'));
+// FROM TA PATRICK --> The only thing you need to import from 'react' is { useState } for this one, and the way you have your import commented out on line 4 is how you need to get satData into that file, not using ReactDOM.
+
+// const satData = satData.createSatData(document.getElementById('satData'));
 
 function App() {
   const [sat, setSat] = useState(satData);
@@ -24,7 +26,7 @@ function App() {
     <div>
       <Banner />
       <Buttons
-        filterByType={filterByType} // why is this variable not bluet like the others 8/14 8:57
+        filterByType={filterByType} // why is this variable not blue like the others 8/14 8:57
         setSat={setSat}
         displaySats={displaySats}
       />
