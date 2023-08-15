@@ -1,4 +1,4 @@
-import satData from "./satData";
+import satData from "./satData.js";
 import './styling.css';
 // Pass the props created from the App() function: filterByType, setSat, and displaySats.
 
@@ -9,23 +9,26 @@ import  {
   displaySats
 } from './App' */ 
 
-
+// the first div is to have : className={"flex-container"} but not working
 const Buttons = ({filterByType, setSat, displaySats}) => {
-  {displaySats.map((sat, id) => {
-    return (
-      <div className={"flex-container"}>
-        <button onClick={() => filterByType(sat)} key={id}>
-          {sat} Orbit
-        </button>
+  return (
+    <div>
+      {displaySats.map((sat, id) => {
+        return (
+          <button onClick={() => filterByType(sat)} key={id}>
+            {sat} Orbit
+          </button>
+        );
+      })}
+      <button onClick={(setSat)} key={satData}>
+          All Orbits  
+      </button>
+  </div>
+  );
+};
         // code continues
         // Inside the button tag, create an onClick function that points to setSat. Pass satData to setSat.
-        <button onClick={() => filterByType(satData)} key={setSat}>
-          All Orbits
-        </button>
-      </div>
-    );
-  })};
-};
+
 
 
 

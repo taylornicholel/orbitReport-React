@@ -1,4 +1,5 @@
-import Banner from "./components/Banner";
+import {Banner, Feet} from "./components/Banner";
+// import { Feet } from "./components/Banner";
 import Buttons from "./components/Buttons";
 import Table from "./components/Table";
 import satData from "./components/satData";
@@ -15,27 +16,28 @@ import { useState } from 'react';
 function App() {
   const [sat, setSat] = useState(satData);
   const displaySats = [...new Set(satData.map((data) => data.orbitType))];
-  // code continues ...
   const filterByType = (currentType) => {
     const displaySats = satData.filter((newSatDisplay) => {
        return newSatDisplay.orbitType === currentType;
     });
     setSat(displaySats);
- };
+  };
   return (
     <div>
       <Banner />
       <Buttons
-        filterByType={filterByType} // why is this variable not blue like the others 8/14 8:57
+        filterByType={filterByType} 
         setSat={setSat}
         displaySats={displaySats}
       />
       <Table sat={sat} />
+      <Feet />
     </div>
   );
 }
 
-
-
-
+// why is this variable not blue like the others 8/14 8:57
+  // code continues ...
+ //  currentType = "" ? satData : filterByType; // not working with displaySats as condition
+ // console.log(sat)
 export default App;
